@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estação do Ano</title>
+    <link rel="stylesheet" href="estações do ano.css">
+</head>
+<body>
+    <div class="b1">
+        <div class="b2">
+            <h1>Qual é a Estação do Ano?</h1>
+            <input type="text" id="mes" placeholder="Digite o mês (ex: Janeiro)"> <br>
+            <button onclick="verificarEstacao()">Verificar Estação</button>
+            <h3 id="resultado"></h3>
+        </div>
+    </div>
+
+    <script>
+        function verificarEstacao() {
+            var mes = document.getElementById('mes').value.trim().toLowerCase();
+            var resultado;
+
+            switch (mes) {
+                case 'dezembro':
+                case 'janeiro':
+                case 'fevereiro':
+                    resultado = "Verão";
+                    break;
+                case 'março':
+                case 'abril':
+                case 'maio':
+                    resultado = "Outono";
+                    break;
+                case 'junho':
+                case 'julho':
+                case 'agosto':
+                    resultado = "Inverno";
+                    break;
+                case 'setembro':
+                case 'outubro':
+                case 'novembro':
+                    resultado = "Primavera";
+                    break;
+                default:
+                    resultado = "Mês inválido! Por favor, insira um mês válido.";
+            }
+
+            document.getElementById('resultado').innerHTML = "Estação: " + resultado;
+        }
+    </script>
+</body>
+</html>
